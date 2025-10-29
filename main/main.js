@@ -1,5 +1,6 @@
 /*=============== DOM READY ===============*/
 document.addEventListener("DOMContentLoaded", () => {
+
   /*=============== NAV MENU TOGGLE ===============*/
   const navMenu = document.getElementById("nav-menu"),
         navToggle = document.getElementById("nav-toggle"),
@@ -56,13 +57,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const scrollActive = () => {
     const scrollY = window.scrollY;
-    const headerHeight = header.offsetHeight;
+    const headerHeight = header.offsetHeight; // Adjust based on header
 
     sections.forEach(current => {
       const sectionHeight = current.offsetHeight;
       const sectionTop = current.offsetTop - headerHeight - 10;
       const sectionId = current.getAttribute("id");
-      const sectionLink = document.querySelector(`.nav__menu a[href*=${sectionId}]`);
+
+      const sectionLink = document.querySelector(
+        `.nav__menu a[href*="${sectionId}"]`
+      );
 
       if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
         sectionLink?.classList.add("active-link");
@@ -105,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sr.reveal(".projects__card", { interval: 100 });
   }
 
-  /*=============== FORM SUBMISSION (SEND EMAIL BACKEND) ===============*/
+  /*=============== FORM SUBMISSION ===============*/
   const form = document.getElementById("enrollForm");
   if (form) {
     form.addEventListener("submit", async e => {
@@ -116,22 +120,21 @@ document.addEventListener("DOMContentLoaded", () => {
       const course = form.course.value;
 
       try {
-        // ✅ Send data to backend (server.js)
-        const res = await fetch("/api/enroll", {
+        const res = await fetch("http://localhost:3000/api/enroll-sqlite", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ fullName, email, course }),
         });
 
         if (res.ok) {
-          alert("✅ Registered successfully! Email sent to the company.");
+          alert("✅ Registered successfully!");
           form.reset();
         } else {
-          alert("❌ Failed to register, please try again.");
+          alert("❌ Failed to register. Please try again.");
         }
       } catch (err) {
         console.error("Fetch error:", err);
-        alert("⚠️ Server not reachable (backend offline or not deployed)");
+        alert("⚠️ Server not reachable. Please check your backend.");
       }
     });
   }
