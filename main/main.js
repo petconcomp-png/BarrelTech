@@ -56,11 +56,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const scrollActive = () => {
     const scrollY = window.scrollY;
-    const headerHeight = header.offsetHeight; // Get actual header height
+    const headerHeight = header.offsetHeight;
 
     sections.forEach(current => {
       const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - headerHeight - 10; // Adjust for spacing
+      const sectionTop = current.offsetTop - headerHeight - 10;
       const sectionId = current.getAttribute("id");
       const sectionLink = document.querySelector(`.nav__menu a[href*=${sectionId}]`);
 
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sr.reveal(".projects__card", { interval: 100 });
   }
 
-  /*=============== FORM SUBMISSION ===============*/
+  /*=============== FORM SUBMISSION (SEND EMAIL BACKEND) ===============*/
   const form = document.getElementById("enrollForm");
   if (form) {
     form.addEventListener("submit", async e => {
@@ -116,21 +116,22 @@ document.addEventListener("DOMContentLoaded", () => {
       const course = form.course.value;
 
       try {
-        const res = await fetch("http://localhost:3000/api/enroll-sqlite", {
+        // ✅ Send data to backend (server.js)
+        const res = await fetch("/api/enroll", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ fullName, email, course }),
         });
 
         if (res.ok) {
-          alert("✅ Registered successfully!");
+          alert("✅ Registered successfully! Email sent to the company.");
           form.reset();
         } else {
-          alert("❌ Failed to register. Please try again.");
+          alert("❌ Failed to register, please try again.");
         }
       } catch (err) {
         console.error("Fetch error:", err);
-        alert("⚠️ Server not reachable. Please check your backend.");
+        alert("⚠️ Server not reachable (backend offline or not deployed)");
       }
     });
   }
