@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const course = form.course.value;
 
       try {
-        const res = await fetch("/api/sendEmail", {
+        const res = await fetch("https://barrel-tech-git-main-barreltechs-projects.vercel.app/", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ fullName, email, course }),
