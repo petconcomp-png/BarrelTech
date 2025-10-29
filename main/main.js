@@ -109,33 +109,4 @@ document.addEventListener("DOMContentLoaded", () => {
     sr.reveal(".projects__card", { interval: 100 });
   }
 
-  /*=============== FORM SUBMISSION ===============*/
-  const form = document.getElementById("enrollForm");
-  if (form) {
-    form.addEventListener("submit", async e => {
-      e.preventDefault();
-
-      const fullName = form.name.value.trim();
-      const email = form.email.value.trim();
-      const course = form.course.value;
-
-      try {
-        const res = await fetch("http://localhost:3000/api/enroll-sqlite", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ fullName, email, course }),
-        });
-
-        if (res.ok) {
-          alert("✅ Registered successfully!");
-          form.reset();
-        } else {
-          alert("❌ Failed to register. Please try again.");
-        }
-      } catch (err) {
-        console.error("Fetch error:", err);
-        alert("⚠️ Server not reachable. Please check your backend.");
-      }
-    });
-  }
 });

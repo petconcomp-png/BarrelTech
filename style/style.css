@@ -7,11 +7,11 @@
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --first-color: hsl(217, 91%, 60%);   /* Bright blue */
+  --first-color: hsl(217, 100%, 27%);   /* Bright blue */
   --second-color: hsl(200, 85%, 55%); 
   --first-gradient: linear-gradient(
     90deg,
-    hsl(217, 91%, 60%),
+    hsl(217, 100%, 27%),
     hsl(200, 85%, 55%)
   );
   --title-color: hsl(255, 12%, 12%);
@@ -268,7 +268,7 @@ img {
   }
 
   .nav__link{
-    color: var(--text-color-light);
+    color: #ffffff;
     font-weight: var(--font-semi-bold);
     transition: color .4s
   }

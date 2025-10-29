@@ -65,14 +65,15 @@
         <i class="ri-close-line"></i>
       </div>
 
-      <ul class="nav__list">
-        <li><a href="#home" class="nav__link">Home</a></li>
-        <li><a href="#about" class="nav__link">About Us</a></li>
-        <li><a href="#services" class="nav__link">Services</a></li>
-        <li><a href="#courses" class="nav__link">Courses</a></li>
-        <li><a href="#enroll" class="nav__link">Enroll</a></li>
-        <li><a href="#contact" class="nav__link">Contact Us</a></li>
-      </ul>
+      <ul class="nav__list"   style="display:flex; justify-content:flex-end; gap:2rem; width:95%; padding-right:0; margin-right:0;">
+  <li><a href="#home" class="nav__link" style="color:white;">Home</a></li>
+  <li><a href="#about" class="nav__link" style="color:white;">About Us</a></li>
+  <li><a href="#services" class="nav__link" style="color:white;">Services</a></li>
+  <li><a href="#courses" class="nav__link" style="color:white;">Courses</a></li>
+  <li><a href="#enroll" class="nav__link" style="color:white;">Enroll</a></li>
+  <li><a href="#contact" class="nav__link" style="color:white;">Contact Us</a></li>
+</ul>
+
     </div>
   </nav>
 </header>
@@ -255,35 +256,41 @@
       <!--==================== ENROLL ====================-->
 <section class="enroll section" id="enroll">
   <div class="container">
-    <span class="section__title">Get Started</span>
-    <h2 class="section__subtitle">Course Registration Form</h2>
-    <p style="text-align: center; margin-bottom: 20px; color: #555;">
-      Fill out the form below to enroll in one of our professional courses.
+     <span class="section__title" style="margin-left: -247px;">Get Started</span>
+
+    <h2 class="section__subtitle">Course Registration</h2>
+
+    <p style="text-align: center; margin-bottom: 15px; color: #ffffff;">
+      For course registration, please select a course from the dropdown below.
     </p>
 
-    <form class="enroll__form container" id="enrollForm">
-      <input type="text" name="name" placeholder="Full Name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <select name="course" required>
-        <option value="">Select Course</option>
-        <option>Microsoft Office</option>
-        <option>Computer Hardware</option>
-        <option>Operating Systems</option>
-        <option>Graphic Design</option>
-        <option>Digital Marketing</option>
-        <option>IT Technician</option>
-        <option>IT Fundamentals</option>
-        <option> Digital Tools</option>
-        <option> Digital Tools</option>
-        <option>Cybersecurity Awareness</option>
-        <option>Networking Fundamentals</option>
-      </select>
-      <button class="btn" type="submit">Register Now</button>
-    </form>
+    <select
+      name="course"
+      style="display: block; width: 100%; padding: 15px; margin: 0 auto 20px; border-radius: 6px; border: 1px solid #ccc;"
+    >
+      <option value="">Select Course</option>
+      <option>Microsoft Office</option>
+      <option>Computer Hardware</option>
+      <option>Operating Systems</option>
+      <option>Graphic Design</option>
+      <option>Digital Marketing</option>
+      <option>IT Technician</option>
+      <option>IT Fundamentals</option>
+      <option>Digital Tools</option>
+      <option>Cybersecurity Awareness</option>
+      <option>Networking Fundamentals</option>
+    </select>
 
-    <div id="enrollMessage" style="text-align:center; margin-top:10px;"></div>
+    <p style="text-align: center; margin-top: 10px; color: #ffffff;">
+      To register for the selected course, please send an email to:
+      <br><br>
+      <strong style="color: #f9fafb; font-size: 18px;">YOUR_EMAIL@domain.com</strong>
+      <br><br>
+      Include your <strong>Name</strong> and <strong>Selected Course</strong> in the email.
+    </p>
   </div>
 </section>
+
 
 
 
@@ -298,7 +305,7 @@
               <div class="contact__card">
                 <div class="contact__icon"><i class="ri-map-pin-2-line"></i></div>
                 <h3 class="contact__title">Visit Us</h3>
-                <address class="contact__info">Petcon Oil and Gas Services <br>Faqeer Api Road, I11/2 Islamabad</address>
+                <address class="contact__info">Breel Tech <br> City Shopping Center Behind Al-Syed Hospital, Mansehra Road, Abbottabad</address>
               </div>
               <div class="contact__card">
                 <div class="contact__icon"><i class="ri-phone-line"></i></div>
@@ -351,7 +358,7 @@
             <ul class="footer__list">
               <li>
                 <address class="footer__info">
-                  Address: <br> I11/2 <br> Plot No 6 <br> Islamabad
+                  Address: <br> City Shopping Center <br> Behind Al-Syed Hospital, <br> Mansehra Road, Abbottabad
                 </address>
               </li>
               <li>
@@ -367,7 +374,7 @@
               <a href="https://web.whatsapp.com/" target="_blank" class="footer__social-link">
                 <i class="ri-whatsapp-line"></i>
               </a>
-              <a href="https://www.google.com/maps/@33.6461824,73.0202112,5863m/data=!3m1!1e3?hl=en&entry=ttu&g_ep=EgoyMDI1MTAxMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="footer__social-link">
+              <a href="https://www.google.com/maps/search/City+Shopping+Center+Behind+Al-Syed+Hospital,+Mansehra+Road,+Abbottabad/@34.1906493,73.2125261,14z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MTAyNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="footer__social-link">
                 <i class="ri-map-pin-line"></i>
               </a>
             </div>

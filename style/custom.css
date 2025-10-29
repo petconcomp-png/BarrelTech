@@ -7,11 +7,11 @@
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --first-color: hsl(217, 91%, 60%);   /* Bright blue */
+  --first-color: hsl(217, 100%, 27%);   /* Bright blue */
   --second-color: hsl(200, 85%, 55%);
   --first-gradient: linear-gradient(
     90deg,
-     hsl(217, 91%, 60%),
+     hsl(217, 100%, 27%),
      hsl(200, 85%, 55%)
   );
   --title-color: hsl(255, 12%, 12%);
@@ -244,7 +244,7 @@ img {
   padding-top: 1rem;
   font-size: 1rem;
   font-family: var(--font-semi-bold);
- color: rgba(0, 179, 255, 0.64);
+ color: rgb(255, 255, 255);
  font-weight: 700; /* <-- make it bold */
 }
 .nav__logo {
@@ -329,7 +329,7 @@ img {
   color: var(--title-color);
 }
 .logo-colored{
-  color: #000270;
+  color: #ffffff;
 }
 
 
@@ -612,106 +612,124 @@ img {
   margin-bottom: 1.5rem;
 }
 
-/*=============== ENROLL SECTION FIXED STYLE ===============*/
+/*=============== SEXY COURSE REGISTRATION SECTION ===============*/
 .enroll {
-  background-color: #0f0f0f;
+  padding: 6rem 1.5rem;
+  background: #0d0d0d;
   color: #fff;
-  text-align: center;
-  padding: 5rem 2rem;
-}
-
-.enroll .section__subtitle {
-  color: var(--first-color);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.enroll .section__title {
-  color: #fff;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 2.5rem;
-}
-
-.enroll__form {
   display: flex;
-  flex-direction: column;  /* stack fields vertically */
-  align-items: center;
-  gap: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto;
+  justify-content: center;
 }
 
-.enroll__form input,
-.enroll__form select {
+.enroll__content {
   width: 100%;
-  max-width: 500px;
-  padding: 1rem 1.2rem;
-  border: 2px solid var(--second-color);
-  border-radius: 0.5rem;
-  background-color: #1a1a1a;
-  color: #fff;
-  font-size: 1rem;
-  outline: none;
-  transition: all 0.3s ease;
+  max-width: 800px;
+  text-align: center;
 }
 
-.enroll__form input::placeholder {
+.enroll__title {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.enroll__subtitle {
+  display: block;
+  color: var(--first-color);
+  font-size: 1.1rem;
+  margin-top: .3rem;
+  margin-bottom: 1.6rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.enroll__desc {
+  color: #bbb;
+  margin-bottom: 2rem;
+}
+
+/* Glass + Glow Card */
+.enroll__box {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+  transition: all .3s ease;
+}
+
+.enroll__box:hover {
+  box-shadow: 0 0 25px rgba(0, 140, 255, .35);
+}
+
+/* Dropdown Styling */
+.enroll__box select {
+  width: 100%;
+  padding: 1.2rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border: none;
+}
+
+/* Email UI */
+.enroll__emailText {
+  margin-top: 1.8rem;
+  font-size: 1rem;
   color: #aaa;
 }
 
-.enroll__form input:focus,
-.enroll__form select:focus {
-  border-color: var(--first-color);
-  box-shadow: 0 0 8px rgba(255, 140, 0, 0.4);
+.email__link {
+  display: block;
+  font-size: 1.6rem;
+  margin: 8px 0 1rem;
+  color: var(--first-color);
+  font-weight: 700;
+  text-decoration: none;
+  transition: .3s ease;
 }
 
-.enroll__form .btn {
-  background: linear-gradient(90deg, var(--first-color),var(--second-color));
-  color: #fff;
-  font-weight: 600;
-  padding: 1rem 2.5rem;
-  border-radius: 0.5rem;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 100%;
-  max-width: 500px;
+.email__link:hover {
+  color: var(--second-color);
+  transform: scale(1.05);
 }
 
-.enroll__form .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(255, 140, 0, 0.4);
+.enroll__note {
+  color: #aaa;
+  font-size: .9rem;
+  margin-top: .5rem;
 }
 
-#enrollMessage {
-  color: #ffb347;
-  font-weight: 500;
-  margin-top: 1.5rem;
-}
-
-/* Responsive layout */
-@media screen and (max-width: 768px) {
-  .enroll__form {
-    width: 100%;
-    padding: 0 1rem;
+/* Responsive */
+@media (max-width: 768px) {
+  .enroll__title {
+    font-size: 2.2rem;
   }
 
-  .enroll__form input,
-  .enroll__form select,
-  .enroll__form .btn {
-    width: 100%;
-    max-width: 100%;
+  .email__link {
+    font-size: 1.2rem;
   }
 
-  .enroll .section__title {
-    font-size: 2rem;
+  .enroll__box {
+    padding: 1.3rem;
   }
 }
+.enroll-container {
+  text-align: right;
+}
 
+.align-right {
+  text-align: right !important;
+}
+
+.align-right .course__list {
+  width: 280px;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
 
 /*=============== CONTACT ===============*/
 .contact__container{
