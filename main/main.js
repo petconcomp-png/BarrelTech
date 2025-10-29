@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const course = form.course.value;
 
       try {
-        const res = await fetch("http://localhost:3000/api/enroll-sqlite", {
+        const res = await fetch("/api/sendEmail", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ fullName, email, course }),
