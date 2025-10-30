@@ -250,7 +250,7 @@ img {
 .nav__logo {
   display: flex;
   align-items: center;
-  width: 3.5rem;
+  width: 12rem;
   margin-top: 1rem;
 }
 .nav__logo img {
@@ -810,7 +810,7 @@ img {
   margin-bottom: 1rem;
 }
 .footer__logo img{
-  width: 2.4rem;
+  width: 10rem;
   margin-right: .4rem;
 }
 .footer__logo span{
